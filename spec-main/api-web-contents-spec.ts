@@ -1449,7 +1449,7 @@ describe('webContents module', () => {
     })
 
     it('respects custom settings', (done) => {
-      w.loadURL('https://github.com')
+      w.loadFile(path.join(__dirname, 'fixtures', 'api', 'print-to-pdf.html'))
       w.webContents.on('did-finish-load', async () => {
         const data = await w.webContents.printToPDF({
           pageRanges: {
